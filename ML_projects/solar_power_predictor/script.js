@@ -96,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function energyError(capacity, remark) {
     if (!capacity) return;
     const out = capacity - remark[0] * capacity;
+    if (out < 0) {
+      return 0;
+    }
     return out.toFixed(2);
   }
 
